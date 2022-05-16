@@ -27,7 +27,7 @@ def Progress_bar(MB, needTime, secondWithMB):
                 MB) + " MB " + colorama.Fore.RESET + colorama.Fore.LIGHTBLUE_EX + RealETC + " ETC" + colorama.Fore.RESET,
             end="")
         time.sleep(1)
-        print("\b" * 3000, end="")
+        print("\b" * 300000, end="")
     return 0
 
 
@@ -46,4 +46,4 @@ def s2t(s):  # s is a number
 
 
 if __name__ == '__main__':
-    Progress_bar(1000, "00:01:00", 10)
+    Progress_bar(600, "00:01:00", 10)
