@@ -1,6 +1,7 @@
 # Progress bar like this | ----------------------------- | 00:00:00 00 MB / OO MB 00:00:00 ETC
 
 import time
+import colorama
 
 
 def Progress_bar(MB, needTime, secondWithMB):
@@ -20,7 +21,11 @@ def Progress_bar(MB, needTime, secondWithMB):
         need_second = t2s(needTime)
         ETC = need_second - usedSecond
         RealETC = s2t(ETC)
-        print("| " + a + c + " |" + usedTime + " " + str(d) + " MB / " + str(MB) + " MB " + RealETC + " ETC", end="")
+        print(
+            "| " + colorama.Fore.GREEN + a + c + colorama.Fore.RESET + " |" + colorama.Fore.RED + usedTime + " " + str(
+                d) + " MB / " + str(
+                MB) + " MB " + colorama.Fore.RESET + colorama.Fore.LIGHTBLUE_EX + RealETC + " ETC" + colorama.Fore.RESET,
+            end="")
         time.sleep(1)
         print("\b" * 3000, end="")
     return 0
